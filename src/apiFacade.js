@@ -46,7 +46,6 @@ function apiFacade() { /* Insert utility-methods from a latter step (d) here (RE
         
         
     }
-
    
     const makeOptions = (method, addToken, body) => {
         var opts = {
@@ -65,9 +64,9 @@ function apiFacade() { /* Insert utility-methods from a latter step (d) here (RE
         return opts;
     }
 
-    const fetchExternData = () => {
+    const fetchExternData = (teamId) => {
         const options = makeOptions("GET", true); // True add's the token
-        return fetch(URL + "/api/info/extern", options).then(handleHttpErrors);
+        return fetch(URL + "/api/info/nbainfo/" + teamId, options).then(handleHttpErrors);
     }
 
 
